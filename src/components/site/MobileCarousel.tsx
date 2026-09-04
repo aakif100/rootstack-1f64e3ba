@@ -69,6 +69,7 @@ export function MobileCarousel<T>({ items, getKey, label, renderItem }: MobileCa
   };
 
   const handleScroll = () => {
+    hideHint();
     if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
     frameRef.current = window.requestAnimationFrame(updateCards);
   };
