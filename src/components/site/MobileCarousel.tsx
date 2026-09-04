@@ -48,11 +48,25 @@ export function MobileCarousel<T>({ items, getKey, label, renderItem }: MobileCa
     updateCards();
     const handleResize = () => updateCards();
     window.addEventListener('resize', handleResize);
+
+    hintTimerRef.current = window.setTimeout(() => {
+      setShowHint(true);
+    }, 2000);
+
     return () => {
       window.removeEventListener('resize', handleResize);
       if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
+      if (hintTimerRef.current !== null) window.clearTimeout(hintTimerRef.current);
     };
   }, []);
+
+  const hideHint = () => {
+    if (!hasInteracted) {
+      setHasInteracted(true);
+      setShowHint(false);
+      if (hintTimerRef.current !== null) window.clearTimeout(hintTimerRef.current);
+    }
+  };
 
   const handleScroll = () => {
     if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
