@@ -14,7 +14,10 @@ export function MobileCarousel<T>({ items, getKey, label, renderItem }: MobileCa
   const trackRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
   const frameRef = useRef<number | null>(null);
+  const hintTimerRef = useRef<number | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showHint, setShowHint] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const updateCards = () => {
     const track = trackRef.current;
