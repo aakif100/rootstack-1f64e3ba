@@ -14,7 +14,7 @@ export function MetallicCard({ children, className, innerClassName, onPointerMov
   return (
     <div
       {...props}
-      className={cn('metal-card group/metal relative overflow-hidden p-px', className)}
+      className={cn('metal-card group/metal relative overflow-hidden p-[3px] sm:p-1', className)}
       onPointerMove={(event) => {
         const bounds = event.currentTarget.getBoundingClientRect();
         x.set(((event.clientX - bounds.left) / bounds.width) * 100);
@@ -30,7 +30,7 @@ export function MetallicCard({ children, className, innerClassName, onPointerMov
       <motion.div
         aria-hidden="true"
         style={{ background: glow }}
-        className="pointer-events-none absolute inset-0 z-10 opacity-35 transition-opacity duration-500 group-hover/metal:opacity-70"
+        className="pointer-events-none absolute inset-0 z-10 opacity-25 transition-opacity duration-500 group-hover/metal:opacity-55"
       />
       <div className={cn('metal-card-inner relative z-0 h-full overflow-hidden', innerClassName)}>
         {children}
