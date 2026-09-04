@@ -71,7 +71,7 @@ export function MobileCarousel<T>({ items, getKey, label, renderItem }: MobileCa
           <div
             key={getKey(item)}
             ref={(node) => { itemRefs.current[index] = node; }}
-            className="mobile-carousel-item w-[calc(100%-3rem)] shrink-0 snap-center snap-always"
+            className="mobile-carousel-item w-full shrink-0 snap-center snap-always"
           >
             {renderItem(item, index)}
           </div>
