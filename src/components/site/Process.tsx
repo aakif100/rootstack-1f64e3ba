@@ -22,6 +22,16 @@ export function Process() {
         
 
         <div ref={ref} className="relative mt-24">
+          {/* Centered mobile connector: it sits behind the cards and fills as this section scrolls. */}
+          <div className="absolute bottom-[10%] left-1/2 top-[10%] z-0 w-[3px] -translate-x-1/2 rounded-full bg-black/[0.08] sm:hidden">
+            <motion.div
+              style={{ scaleY: lineScale }}
+              className="h-full w-full origin-top rounded-full"
+            >
+              <div className="h-full w-full rounded-full bg-[linear-gradient(180deg,#f4f4f4_0%,#8f8f8f_20%,#111111_50%,#8f8f8f_80%,#f4f4f4_100%)] shadow-[0_0_8px_rgba(0,0,0,0.2)]" />
+            </motion.div>
+          </div>
+
           {/* metallic connector */}
           <div className="absolute left-[27px] top-2 hidden h-[calc(100%-2rem)] w-[3px] rounded-full bg-black/[0.07] sm:block">
             <motion.div
@@ -32,7 +42,7 @@ export function Process() {
             </motion.div>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="relative z-10 flex flex-col gap-10 sm:gap-6">
             {processSteps.map((step, index) =>
             <Reveal key={step.number} delay={index * 0.06} y={24}>
                 <motion.div
