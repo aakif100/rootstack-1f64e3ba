@@ -12,7 +12,7 @@ export function Technologies() {
 
   return (
     <section className="relative w-full overflow-hidden px-6 py-32 lg:px-10 lg:py-40">
-      <motion.div style={isMobile ? undefined : { y: drift }} className="mx-auto max-w-[1000px]">
+      <motion.div style={isMobile ? {} : { y: drift }} className="mx-auto max-w-[1000px]">
         <SectionHeading
           eyebrow="Technologies"
           title="A stack chosen for longevity."
@@ -23,7 +23,7 @@ export function Technologies() {
           {technologies.map((tech, index) =>
           <Reveal key={tech} delay={index * 0.05} y={18} scale={0.94}>
               <motion.span
-              animate={isMobile ? undefined : { y: [0, index % 2 === 0 ? -6 : 6, 0] }}
+              animate={isMobile ? {} : { y: [0, index % 2 === 0 ? -6 : 6, 0] }}
               transition={{
                 duration: 6 + index % 4,
                 repeat: Infinity,

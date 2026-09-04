@@ -18,11 +18,11 @@ export function FinalCta() {
     <section id="cta" ref={ref} className="relative w-full overflow-hidden px-6 py-36 lg:px-10 lg:py-48">
       {/* subtle glass shapes behind the CTA */}
       <motion.div
-        style={isMobile ? undefined : { y: shapeA }}
+        style={isMobile ? {} : { y: shapeA }}
         className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-[85%] -translate-y-1/2 rounded-[120px] border border-white/70 bg-white/45 blur-[2px]" />
       
       <motion.div
-        style={isMobile ? undefined : { y: shapeB }}
+        style={isMobile ? {} : { y: shapeB }}
         className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-[5%] -translate-y-[60%] rotate-12 rounded-[100px] border border-white/60 bg-white/35 blur-[1px]" />
       
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_50%,rgba(255,255,255,0.85),transparent_70%)]" />

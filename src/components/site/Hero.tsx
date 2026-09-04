@@ -59,7 +59,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_20%,#fafafa_0%,#efefee_55%,#e7e7e6_100%)]" />
       <div className="grain pointer-events-none absolute inset-0 opacity-[0.5]" />
 
-      <motion.div style={isMobile ? undefined : { y: controlY, opacity: fade }} className="relative z-10 w-full max-w-full">
+      <motion.div style={isMobile ? {} : { y: controlY, opacity: fade }} className="relative z-10 w-full max-w-full">
         <motion.div
           initial={{ opacity: 0, y: 26, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -71,7 +71,7 @@ export function Hero() {
       </motion.div>
 
       <motion.div
-        style={isMobile ? undefined : { y: copyY }}
+        style={isMobile ? {} : { y: copyY }}
         className="relative z-10 mt-16 flex flex-col items-center text-center sm:mt-24"
       >
         <div
