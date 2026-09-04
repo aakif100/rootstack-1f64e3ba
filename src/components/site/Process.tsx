@@ -11,8 +11,8 @@ export function Process() {
     offset: ['start 75%', 'end 60%']
   });
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const completionScale = useTransform(scrollYProgress, [0.86, 0.94, 1], [0.35, 1.08, 1]);
-  const completionOpacity = useTransform(scrollYProgress, [0.86, 0.92], [0, 1]);
+  const completionScale = useTransform(scrollYProgress, [0.7, 0.8, 0.9], [0.35, 1.08, 1]);
+  const completionOpacity = useTransform(scrollYProgress, [0.7, 0.78], [0, 1]);
 
   return (
     <section id="process" className="relative w-full px-6 py-32 lg:px-10 lg:py-40">
