@@ -61,6 +61,7 @@ export function ScrollStrand({ progress }: ScrollStrandProps) {
           pathLength="1"
           style={{ pathLength: visibleProgress }}
           stroke="currentColor"
+          className="strand-glow"
           strokeOpacity="0.16"
           strokeWidth="2.8"
           strokeLinecap="round"
