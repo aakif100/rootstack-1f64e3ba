@@ -69,7 +69,9 @@ export function MobileCarousel<T>({ items, getKey, label, renderItem }: MobileCa
   };
 
   const handleScroll = () => {
-    hideHint();
+    // Only treat an actual horizontal move of the track as a swipe.
+    const track = trackRef.current;
+    if (track && track.scrollLeft > 4) hideHint();
     if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
     frameRef.current = window.requestAnimationFrame(updateCards);
   };
@@ -86,8 +88,7 @@ export function MobileCarousel<T>({ items, getKey, label, renderItem }: MobileCa
         <div
           ref={trackRef}
           onScroll={handleScroll}
-          onTouchStart={hideHint}
-          onPointerDown={hideHint}
+          onTouchMove={hideHint}
           aria-label={label}
           className="mobile-carousel -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-3"
         >
