@@ -213,6 +213,17 @@ body.rootstack {
   transition: filter 180ms ease-out, opacity 180ms ease-out, transform 180ms ease-out;
   will-change: filter, opacity, transform;
 }
+@keyframes swipe-hint-bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+.swipe-hint-arrow {
+  animation: swipe-hint-bounce 1.4s ease-in-out infinite;
+}
 /* ---------- Glass surfaces ---------- */
 .glass-panel {
   background: linear-gradient(150deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.55) 100%);
