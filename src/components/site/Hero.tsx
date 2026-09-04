@@ -62,7 +62,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 26, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.1, ease }}
-          className="mx-auto w-fit max-w-full"
+          className="mx-auto w-full max-w-full lg:w-fit"
         >
           <SegmentedControl active={active} onSelect={handleSelect} />
         </motion.div>
