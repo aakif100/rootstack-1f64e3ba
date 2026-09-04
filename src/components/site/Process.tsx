@@ -11,6 +11,8 @@ export function Process() {
     offset: ['start 75%', 'end 60%']
   });
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const completionScale = useTransform(scrollYProgress, [0.86, 0.94, 1], [0.35, 1.08, 1]);
+  const completionOpacity = useTransform(scrollYProgress, [0.86, 0.92], [0, 1]);
 
   return (
     <section id="process" className="relative w-full px-6 py-32 lg:px-10 lg:py-40">
@@ -23,7 +25,7 @@ export function Process() {
 
         <div ref={ref} className="relative mt-24">
           {/* Centered mobile connector: it sits behind the cards and fills as this section scrolls. */}
-          <div className="absolute bottom-[10%] left-1/2 top-[10%] z-0 w-[3px] -translate-x-1/2 rounded-full bg-black/[0.08] sm:hidden">
+          <div className="absolute bottom-[27px] left-1/2 top-[10%] z-0 w-[3px] -translate-x-1/2 rounded-full bg-black/[0.08] sm:hidden">
             <motion.div
               style={{ scaleY: lineScale }}
               className="h-full w-full origin-top rounded-full"
@@ -76,6 +78,18 @@ export function Process() {
               </Reveal>
             )}
           </div>
+
+          <motion.div
+            style={{ scale: completionScale, opacity: completionOpacity }}
+            className="metal-bezel relative z-10 mx-auto mt-7 flex h-[54px] w-[54px] items-center justify-center rounded-full p-[3px] sm:hidden"
+            aria-hidden="true"
+          >
+            <div className="flex h-full w-full items-center justify-center rounded-full bg-ink text-canvas shadow-[0_2px_8px_rgba(0,0,0,0.6)_inset]">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m5 12 4 4L19 6" />
+              </svg>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>);
