@@ -30,8 +30,9 @@ export function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-      scrolled ? 'backdrop-blur-xl' : ''}`
+      scrolled ? 'nav-glass backdrop-blur-xl' : ''}`
       }>
+
       
       <div
         className={`transition-colors duration-500 ${
