@@ -65,13 +65,13 @@ export function MobileCarousel<T>({ items, getKey, label, renderItem }: MobileCa
         ref={trackRef}
         onScroll={handleScroll}
         aria-label={label}
-        className="mobile-carousel -mx-6 flex snap-x snap-mandatory overflow-x-auto px-6 pb-3"
+        className="mobile-carousel -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-3"
       >
         {items.map((item, index) => (
           <div
             key={getKey(item)}
             ref={(node) => { itemRefs.current[index] = node; }}
-            className="mobile-carousel-item w-full shrink-0 snap-center snap-always"
+            className="mobile-carousel-item w-[calc(100%-3rem)] shrink-0 snap-center snap-always"
           >
             {renderItem(item, index)}
           </div>
