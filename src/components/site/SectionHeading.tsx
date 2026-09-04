@@ -22,8 +22,7 @@ export function SectionHeading({
       }>
       
       <Reveal y={16}>
-        <span className="metal-surface shimmer shimmer-slow relative inline-flex items-center gap-2 overflow-hidden rounded-full px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-600">
-          <span className="h-1.5 w-1.5 rounded-full bg-neutral-800" />
+        <span className="metal-surface shimmer shimmer-slow relative inline-flex items-center overflow-hidden rounded-full px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-600">
           {eyebrow}
         </span>
       </Reveal>
