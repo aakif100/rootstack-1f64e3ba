@@ -32,7 +32,6 @@ export function MobileCarousel<T>({ items, getKey, label, renderItem }: MobileCa
       const itemCenter = item.offsetLeft + item.offsetWidth / 2;
       const distance = Math.abs(center - itemCenter);
       const progress = Math.min(distance / Math.max(item.offsetWidth, 1), 1);
-      item.style.setProperty('--carousel-blur', `${(progress * 2.5).toFixed(2)}px`);
       item.style.setProperty('--carousel-opacity', `${(1 - progress * 0.24).toFixed(3)}`);
       item.style.setProperty('--carousel-scale', `${(1 - progress * 0.025).toFixed(3)}`);
       if (distance < closestDistance) {

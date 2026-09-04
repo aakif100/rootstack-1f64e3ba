@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Reveal } from './Reveal';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const STATS = [
 { value: '120+', label: 'Products shipped' },
@@ -10,12 +11,13 @@ const STATS = [
 
 
 export function Stats() {
+  const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll();
   const drift = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
   return (
     <section className="relative w-full px-6 pb-8 lg:px-10">
-      <motion.div style={{ y: drift }} className="mx-auto max-w-[1200px]">
+      <motion.div style={isMobile ? undefined : { y: drift }} className="mx-auto max-w-[1200px]">
         <Reveal>
           <div className="glass-panel grid grid-cols-2 gap-px overflow-hidden rounded-[28px] bg-black/[0.06] md:grid-cols-4">
             {STATS.map((stat, index) =>
