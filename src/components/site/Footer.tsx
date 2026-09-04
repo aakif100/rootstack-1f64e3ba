@@ -26,7 +26,7 @@ const SOCIALS = [
 
 export function Footer() {
   return (
-    <footer className="relative w-full border-t border-black/[0.06] px-6 pb-14 pt-24 lg:px-10 lg:pt-32">
+    <footer className="relative w-full border-t border-black/[0.06] bg-canvas/80 px-6 pb-14 pt-24 backdrop-blur-xl lg:px-10 lg:pt-32">
       <div className="mx-auto max-w-[1200px]">
         <Reveal>
           <div className="grid gap-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
