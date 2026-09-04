@@ -11,3 +11,5 @@
 - [x] Verify desktop and mobile visuals, interactions, Hero cycling, and page overflow.
 - [x] Match Services and Featured Work card bezels to the Hero's machined silver treatment.
 - [x] Verify the refined bezel across desktop, tablet, and mobile layouts.
+- [x] Add a subtle organic vertical page-progress strand behind the site content.
+- [x] Verify the strand across desktop, tablet, and mobile without overlap or overflow.

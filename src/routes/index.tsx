@@ -14,6 +14,7 @@ import { Faq } from "@/components/site/Faq";
 import { FinalCta } from "@/components/site/FinalCta";
 import { Inquiry } from "@/components/site/Inquiry";
 import { Footer } from "@/components/site/Footer";
+import { ScrollStrand } from "@/components/site/ScrollStrand";
 
 const title = "RootStack — Websites, Apps & AI Automation Studio";
 const description =
@@ -85,9 +86,11 @@ function Index() {
         className="fixed inset-x-0 top-0 z-[60] h-[5px] origin-left bg-ink/80 md:h-[4px] lg:h-[3px]"
       />
 
+      <ScrollStrand progress={scrollYProgress} />
+
       <Navbar />
 
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Stats />
         <Services />
@@ -101,7 +104,9 @@ function Index() {
         <Inquiry />
       </main>
 
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </motion.div>
   );
 }
