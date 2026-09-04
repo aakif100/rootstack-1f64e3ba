@@ -294,4 +294,7 @@ body.rootstack {
   .mobile-carousel-item {
     transition: none;
   }
+  .swipe-hint-arrow {
+    animation: none;
+  }
 }
