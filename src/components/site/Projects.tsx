@@ -59,7 +59,7 @@ export function Projects() {
                   </p>
 
                   <a
-                  href="#cta"
+                  href="#contact"
                   className="group/btn mt-7 inline-flex w-fit items-center gap-2 rounded-xl border border-black/[0.08] bg-white/80 px-5 py-3 text-sm font-medium text-ink transition-all duration-500 hover:bg-ink hover:text-white">
                   
                     View Case Study
