@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MenuIcon, XIcon } from 'lucide-react';
 import { Logo } from './Logo';
 
 const LINKS = [
@@ -7,6 +8,8 @@ const LINKS = [
 { label: 'Work', href: '#work' },
 { label: 'About', href: '#why' },
 { label: 'Process', href: '#process' }];
+
+
 
 
 export function Navbar() {
