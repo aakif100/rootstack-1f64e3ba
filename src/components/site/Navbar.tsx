@@ -62,13 +62,46 @@ export function Navbar() {
             </a>
             <a
               href="#contact"
-              className="group relative overflow-hidden rounded-xl bg-ink px-5 py-3 text-[15px] font-medium text-white transition-all duration-300 hover:shadow-[0_14px_30px_-12px_rgba(0,0,0,0.65)]">
+              className="group relative overflow-hidden rounded-xl bg-ink px-4 py-2.5 text-[14px] font-medium text-white transition-all duration-300 hover:shadow-[0_14px_30px_-12px_rgba(0,0,0,0.65)] sm:px-5 sm:py-3 sm:text-[15px]">
               
               <span className="relative z-10">Let's Talk</span>
               <span className="absolute inset-0 -translate-x-full bg-white/15 transition-transform duration-700 group-hover:translate-x-0" />
             </a>
+            <button
+              type="button"
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+              className="metal-surface flex h-10 w-10 items-center justify-center rounded-xl text-ink lg:hidden">
+              {open ? <XIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+            </button>
           </div>
         </nav>
+
+        <AnimatePresence>
+          {open &&
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden border-t border-black/[0.06] bg-canvas/90 backdrop-blur-xl lg:hidden">
+            
+              <div className="flex flex-col px-6 py-4">
+                {[...LINKS, { label: 'Start a Project', href: '#contact' }].map((link) =>
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="rounded-xl px-2 py-3 text-[16px] font-medium text-neutral-600 transition-colors duration-300 hover:text-ink">
+                
+                    {link.label}
+                  </a>
+              )}
+              </div>
+            </motion.div>
+          }
+        </AnimatePresence>
       </div>
     </motion.header>);
 
