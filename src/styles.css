@@ -167,15 +167,14 @@ body.rootstack {
 /* ---------- Organic page-progress strand ---------- */
 .scroll-strand {
   color: var(--color-ink);
-  opacity: 0.82;
+  opacity: 0.9;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 3%, black 96%, transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0, black 3%, black 96%, transparent 100%);
 }
 
 @media (max-width: 767px) {
   .scroll-strand {
-    opacity: 0.62;
-    transform: translateX(-2.5%);
+    opacity: 0.76;
   }
 }
 
