@@ -46,7 +46,7 @@ export function Hero() {
     setTick((t) => t + 1);
   }, []);
 
-  const copy = HERO_COPY[active];
+  const copy = HERO_COPY[active] ?? HERO_COPY[0];
 
   return (
     <section
