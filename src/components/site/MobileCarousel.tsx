@@ -78,23 +78,41 @@ export function MobileCarousel<T>({ items, getKey, label, renderItem }: MobileCa
     itemRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   };
 
+  const isLastCard = activeIndex === items.length - 1;
+
   return (
     <div className="md:hidden">
-      <div
-        ref={trackRef}
-        onScroll={handleScroll}
-        aria-label={label}
-        className="mobile-carousel -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-3"
-      >
-        {items.map((item, index) => (
-          <div
-            key={getKey(item)}
-            ref={(node) => { itemRefs.current[index] = node; }}
-            className="mobile-carousel-item w-full shrink-0 snap-center snap-always"
-          >
-            {renderItem(item, index)}
-          </div>
-        ))}
+      <div className="relative">
+        <div
+          ref={trackRef}
+          onScroll={handleScroll}
+          onTouchStart={hideHint}
+          onPointerDown={hideHint}
+          aria-label={label}
+          className="mobile-carousel -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-3"
+        >
+          {items.map((item, index) => (
+            <div
+              key={getKey(item)}
+              ref={(node) => { itemRefs.current[index] = node; }}
+              className="mobile-carousel-item w-full shrink-0 snap-center snap-always"
+            >
+              {renderItem(item, index)}
+            </div>
+          ))}
+        </div>
+
+        <div
+          aria-hidden="true"
+          className={cn(
+            'pointer-events-none absolute inset-y-0 right-0 flex w-16 items-center justify-end pr-2 transition-opacity duration-500',
+            showHint && !isLastCard ? 'opacity-100' : 'opacity-0'
+          )}
+        >
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/40 bg-white/80 shadow-[0_4px_14px_rgba(0,0,0,0.12)] backdrop-blur-md">
+            <ChevronRight className="swipe-hint-arrow h-5 w-5 text-ink" />
+          </span>
+        </div>
       </div>
 
       <div className="mt-6 flex items-center justify-center gap-2.5" aria-label={`${label} position`}>
