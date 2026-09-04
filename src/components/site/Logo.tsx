@@ -15,7 +15,7 @@ export function Logo({ inverted = false }: LogoProps) {
         alt="RootStack logo"
         width={40}
         height={40}
-        className="h-9 w-9 object-contain transition-transform duration-500 group-hover:rotate-[8deg]"
+        className="h-12 w-12 object-contain transition-transform duration-500 group-hover:rotate-[8deg] sm:h-14 sm:w-14"
       />
       <span className="flex flex-col leading-none">
         <span className={`text-[19px] font-bold tracking-tight ${tone}`}>RootStack</span>
