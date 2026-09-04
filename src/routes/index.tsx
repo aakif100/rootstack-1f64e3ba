@@ -82,7 +82,7 @@ function Index() {
     >
       <motion.div
         style={{ scaleX: progress }}
-        className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-ink/80"
+        className="fixed inset-x-0 top-0 z-[60] h-[5px] origin-left bg-ink/80 md:h-[4px] lg:h-[3px]"
       />
 
       <Navbar />
