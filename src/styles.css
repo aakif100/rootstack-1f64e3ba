@@ -316,9 +316,14 @@ body.rootstack {
   .glass-panel {
     backdrop-filter: none !important;
   }
+  /* Navbar keeps its frosted glass: it is a single small fixed surface. */
+  .nav-glass {
+    backdrop-filter: blur(18px) saturate(140%) !important;
+  }
   .glass-panel {
     background: rgba(255, 255, 255, 0.9);
   }
+
   .bg-white\/50,
   .bg-white\/55,
   .bg-white\/60,

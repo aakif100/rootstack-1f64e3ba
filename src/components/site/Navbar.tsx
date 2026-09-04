@@ -30,8 +30,9 @@ export function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-      scrolled ? 'backdrop-blur-xl' : ''}`
+      scrolled ? 'nav-glass backdrop-blur-xl' : ''}`
       }>
+
       
       <div
         className={`transition-colors duration-500 ${
@@ -85,7 +86,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-black/[0.06] bg-canvas/90 backdrop-blur-xl lg:hidden">
+            className="nav-glass overflow-hidden border-t border-black/[0.06] bg-canvas/90 backdrop-blur-xl lg:hidden">
             
               <div className="flex flex-col px-6 py-4">
                 {[...LINKS, { label: 'Start a Project', href: '#contact' }].map((link) =>
