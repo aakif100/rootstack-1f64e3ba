@@ -1,24 +1,87 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { Stats } from "@/components/site/Stats";
+import { Services } from "@/components/site/Services";
+import { Projects } from "@/components/site/Projects";
+import { Process } from "@/components/site/Process";
+import { WhyUs } from "@/components/site/WhyUs";
+import { Testimonials } from "@/components/site/Testimonials";
+import { Technologies } from "@/components/site/Technologies";
+import { Faq } from "@/components/site/Faq";
+import { FinalCta } from "@/components/site/FinalCta";
+import { Inquiry } from "@/components/site/Inquiry";
+import { Footer } from "@/components/site/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "RootStack — Websites, Apps & AI Automation Studio";
+const description =
+  "RootStack is a product studio building fast websites, polished web and mobile apps, and AI automations for teams that care about the details.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "RootStack Digital Solutions",
+          description,
+          areaServed: "Worldwide",
+          serviceType: ["Website Development", "App Development", "AI Automation"],
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 28,
+    restDelta: 0.001,
+  });
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="relative min-h-screen w-full overflow-x-hidden bg-canvas"
     >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+      <motion.div
+        style={{ scaleX: progress }}
+        className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-ink/80"
       />
-    </div>
+
+      <Navbar />
+
+      <main>
+        <Hero />
+        <Stats />
+        <Services />
+        <Projects />
+        <Process />
+        <WhyUs />
+        <Testimonials />
+        <Technologies />
+        <Faq />
+        <FinalCta />
+        <Inquiry />
+      </main>
+
+      <Footer />
+    </motion.div>
   );
 }
