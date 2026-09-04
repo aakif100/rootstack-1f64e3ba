@@ -49,7 +49,7 @@ export function FinalCta() {
         <Reveal delay={0.2}>
           <div className="mt-12 flex flex-col items-center gap-3 sm:flex-row">
             <a
-              href="#top"
+              href="#contact"
               className="group relative flex items-center gap-3 overflow-hidden rounded-2xl bg-ink px-8 py-4 text-[17px] font-medium text-white transition-all duration-500 hover:shadow-[0_24px_48px_-18px_rgba(0,0,0,0.7)]">
               
               <span className="relative z-10">Start a Project</span>
@@ -57,7 +57,7 @@ export function FinalCta() {
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-[900ms] group-hover:translate-x-full" />
             </a>
             <a
-              href="#top"
+              href="#contact"
               className="metal-surface group flex items-center gap-3 rounded-2xl px-8 py-4 text-[17px] font-medium text-ink transition-all duration-500 hover:shadow-[0_18px_36px_-16px_rgba(0,0,0,0.4)]">
               
               <CalendarIcon className="h-[18px] w-[18px] transition-transform duration-500 group-hover:-translate-y-0.5" />

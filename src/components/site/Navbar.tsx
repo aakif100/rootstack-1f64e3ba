@@ -6,7 +6,7 @@ const LINKS = [
 { label: 'Services', href: '#services' },
 { label: 'Work', href: '#work' },
 { label: 'About', href: '#why' },
-{ label: 'Blog', href: '#faq' }];
+{ label: 'Process', href: '#process' }];
 
 
 export function Navbar() {
@@ -50,13 +50,13 @@ export function Navbar() {
 
           <div className="flex items-center gap-2.5">
             <a
-              href="#cta"
+              href="#contact"
               className="hidden rounded-xl bg-black/[0.045] px-5 py-3 text-[15px] font-medium text-ink transition-all duration-300 hover:bg-black/[0.08] sm:block">
               
               Log in
             </a>
             <a
-              href="#cta"
+              href="#contact"
               className="group relative overflow-hidden rounded-xl bg-ink px-5 py-3 text-[15px] font-medium text-white transition-all duration-300 hover:shadow-[0_14px_30px_-12px_rgba(0,0,0,0.65)]">
               
               <span className="relative z-10">Let's Talk</span>
