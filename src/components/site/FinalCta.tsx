@@ -27,8 +27,7 @@ export function FinalCta() {
 
       <div className="relative mx-auto flex max-w-[900px] flex-col items-center text-center">
         <Reveal y={16}>
-          <span className="metal-surface shimmer relative mb-8 inline-flex items-center gap-2 overflow-hidden rounded-full px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-600">
-            <span className="h-1.5 w-1.5 rounded-full bg-neutral-800" />
+          <span className="metal-surface shimmer relative mb-8 inline-flex items-center overflow-hidden rounded-full px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-600">
             Two slots left for Q3
           </span>
         </Reveal>
