@@ -9,5 +9,5 @@
 - [x] Apply the selected subtle metallic edge treatment to Services and Featured Work.
 - [x] Compact Featured Work cards on desktop without changing tablet/mobile sizing.
 - [x] Verify desktop and mobile visuals, interactions, Hero cycling, and page overflow.
-- [ ] Match Services and Featured Work card bezels to the Hero's machined silver treatment.
-- [ ] Verify the refined bezel across desktop, tablet, and mobile layouts.
+- [x] Match Services and Featured Work card bezels to the Hero's machined silver treatment.
+- [x] Verify the refined bezel across desktop, tablet, and mobile layouts.
