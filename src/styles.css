@@ -142,3 +142,110 @@
     color: var(--color-foreground);
   }
 }
+
+/* ---------- RootStack (Magic Patterns) design system ---------- */
+@theme {
+  --color-canvas: #f1f1f0;
+  --color-ink: #0a0a0a;
+  --color-hairline: rgba(10, 10, 10, 0.08);
+  --tracking-tightest: -0.045em;
+  --radius-4xl: 2rem;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.rootstack {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f1f1f0;
+  color: #0a0a0a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Metallic bezel (outer ring of the segmented control) ---------- */
+.metal-bezel {
+  background: linear-gradient(160deg, #ffffff 0%, #d5d5d5 18%, #f6f6f6 38%, #b9b9b9 62%, #ececec 82%, #cfcfcf 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.12) inset,
+    0 24px 50px -18px rgba(0, 0, 0, 0.45),
+    0 6px 14px -6px rgba(0, 0, 0, 0.25);
+}
+/* ---------- Light metallic surface (badges, pills, strips) ---------- */
+.metal-surface {
+  background: linear-gradient(150deg, #ffffff 0%, #ededed 35%, #dcdcdc 60%, #f5f5f5 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.08) inset,
+    0 8px 20px -10px rgba(0, 0, 0, 0.25);
+}
+/* ---------- Glass surfaces ---------- */
+.glass-panel {
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.55) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 20px 40px -24px rgba(0, 0, 0, 0.35);
+}
+.glass-dark {
+  background: linear-gradient(150deg, rgba(28, 28, 30, 0.96) 0%, rgba(10, 10, 11, 0.98) 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.16) inset,
+    0 30px 60px -30px rgba(0, 0, 0, 0.7);
+}
+/* ---------- Slow metallic shimmer ---------- */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-140%) skewX(-16deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.55;
+  }
+  60% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateX(240%) skewX(-16deg);
+    opacity: 0;
+  }
+}
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.75) 45%,
+    rgba(255, 255, 255, 0.15) 55%,
+    transparent 80%
+  );
+  animation: shimmer-sweep 7s ease-in-out infinite;
+}
+.shimmer-slow::after {
+  animation-duration: 11s;
+}
+/* ---------- Fine grain / noise for the neutral canvas ---------- */
+.grain {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.045) 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+::selection {
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .shimmer::after {
+    animation: none;
+  }
+}
