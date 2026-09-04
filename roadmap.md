@@ -13,3 +13,5 @@
 - [x] Verify the refined bezel across desktop, tablet, and mobile layouts.
 - [x] Add a subtle organic vertical page-progress strand behind the site content.
 - [x] Verify the strand across desktop, tablet, and mobile without overlap or overflow.
+- [x] Extend the strand's active progress so it remains visible while scrolling.
+- [x] Add a frosted-glass background to the footer.
