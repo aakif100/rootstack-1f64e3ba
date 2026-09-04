@@ -15,3 +15,4 @@
 - [x] Verify the strand across desktop, tablet, and mobile without overlap or overflow.
 - [x] Extend the strand's active progress so it remains visible while scrolling.
 - [x] Add a frosted-glass background to the footer.
+- [x] Mobile scroll performance: removed live blur on phones/tablets, disabled parallax + looping chip motion, simplified strand and carousel effects
