@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { technologies } from '../data/content';
+import { technologies } from '../../data/content';
 import { SectionHeading } from './SectionHeading';
 import { Reveal } from './Reveal';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRightIcon } from 'lucide-react';
-import { projects } from '../data/projects';
+import { projects } from '../../data/projects';
 import { SectionHeading } from './SectionHeading';
 import { Reveal } from './Reveal';
 

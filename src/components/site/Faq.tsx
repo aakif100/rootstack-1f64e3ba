@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PlusIcon } from 'lucide-react';
-import { faqs } from '../data/content';
+import { faqs } from '../../data/content';
 import { SectionHeading } from './SectionHeading';
 import { Reveal } from './Reveal';
 

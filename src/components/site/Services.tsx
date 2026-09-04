@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GlobeIcon, SmartphoneIcon, SparklesIcon, ArrowUpRightIcon } from 'lucide-react';
-import { services } from '../data/services';
+import { services } from '../../data/services';
 import { SectionHeading } from './SectionHeading';
 import { Reveal } from './Reveal';
 

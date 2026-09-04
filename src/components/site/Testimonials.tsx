@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { QuoteIcon } from 'lucide-react';
-import { testimonials, type Testimonial } from '../data/content';
+import { testimonials, type Testimonial } from '../../data/content';
 import { SectionHeading } from './SectionHeading';
 import { Reveal } from './Reveal';
 

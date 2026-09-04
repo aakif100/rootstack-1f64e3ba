@@ -8,7 +8,7 @@ import {
   PaletteIcon,
   BotIcon } from
 'lucide-react';
-import { advantages } from '../data/content';
+import { advantages } from '../../data/content';
 import { SectionHeading } from './SectionHeading';
 import { Reveal } from './Reveal';
 

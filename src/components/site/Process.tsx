@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { processSteps } from '../data/content';
+import { processSteps } from '../../data/content';
 import { SectionHeading } from './SectionHeading';
 import { Reveal } from './Reveal';
 
